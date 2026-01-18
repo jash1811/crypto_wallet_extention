@@ -1,0 +1,27 @@
+{
+     "manifest_version": 3,
+     "name": "Custom Crypto Wallet",
+     "version": "1.0",
+     "permissions": [
+          "storage"
+     ],
+     "background": {
+          "service_worker": "background.js"
+     },
+     "host_permissions": [
+          "<all_urls>"
+     ],
+     "externally_connectable": {
+          "matches": [
+               "http://localhost:*/*",
+               "https://yourdomain.com/*"
+          ]
+     },
+     "action": {
+          "default_popup": "popup.html",
+          "default_icon": "./icons/icon16.png"
+     },
+     "content_security_policy": {
+          "extension_pages": "script-src 'self'; object-src 'self'"
+     }
+}
